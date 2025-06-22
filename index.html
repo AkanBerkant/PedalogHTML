@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pedalog Link Yönlendirme</title>
+    <script>
+      const path = window.location.pathname.replace("/go/", "");
+      if (path) {
+        window.location.href = "pedalog://" + path;
+      } else {
+        document.write("Geçersiz bağlantı.");
+      }
+
+      // App yüklü değilse store'a yönlendir (yedek)
+      setTimeout(() => {
+        window.location.href =
+          "https://play.google.com/store/apps/details?id=com.pedalog";
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <p>Pedalog uygulamasına yönlendiriliyorsunuz...</p>
+  </body>
+</html>
